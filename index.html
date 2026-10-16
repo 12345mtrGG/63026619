@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d8232a'/%3E%3Cpath d='M16 5.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L16 20.4 10.1 23.5l1.2-6.5L6.5 12.4l6.6-.9z' fill='%23ffe08a'/%3E%3C/svg%3E">
+<title>东南大学 63026619 班团支部 | 芯火相传 青春向党</title>
+<meta name="description" content="共青团东南大学 63026619 班团支部官方网站：支部概况、支部特色、团课报名、活动剪影与建设规划。">
+<meta property="og:title" content="东南大学 63026619 班团支部 | 芯火相传 青春向党">
+<meta property="og:description" content="芯火相传，青春向党。记录我们的每一次学习、每一次行动、每一步成长。">
+<meta property="og:image" content="assets/hero-tuanke.jpg">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --ink:#06070b; --ink2:#0b0d14; --panel:#10131d; --panel2:#151926;
+    --line:rgba(255,255,255,.09); --txt:#e9ecf3; --dim:#9aa3b5;
+    --red:#d8232a; --red-l:#ff3b30; --red-deep:#8a0f14;
+    --gold:#f0c14b; --gold-l:#ffe08a; --radius:18px; --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink); color:var(--txt); overflow-x:hidden; line-height:1.7;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* 背景：电路板 + 红色光晕 */
+  .bg{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+  .bg-pattern{
+    position:absolute;inset:0;opacity:.55;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23ffd9a0' stroke-opacity='0.075' stroke-width='1'%3E%3Cpath d='M0 80h40V40h40v40h80'/%3E%3Cpath d='M80 160v-40h80'/%3E%3Cpath d='M0 0v20h20'/%3E%3C/g%3E%3Cg fill='%23ffd9a0' fill-opacity='0.16'%3E%3Ccircle cx='40' cy='40' r='2.4'/%3E%3Ccircle cx='80' cy='80' r='2.4'/%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3Ccircle cx='120' cy='120' r='2'/%3E%3C/g%3E%3C/svg%3E");
+    -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 78%);
+    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 78%);
+  }
+  .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+  .orb-1{width:620px;height:620px;background:radial-gradient(circle,rgba(216,35,42,.55),transparent 68%);top:-220px;left:-160px;animation:drift 18s ease-in-out infinite}
+  .orb-2{width:560px;height:560px;background:radial-gradient(circle,rgba(240,193,75,.28),transparent 68%);top:12%;right:-200px;animation:drift 22s ease-in-out infinite reverse}
+  .orb-3{width:520px;height:520px;background:radial-gradient(circle,rgba(216,35,42,.35),transparent 70%);bottom:-180px;left:38%;animation:drift 26s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(46px,-38px) scale(1.09)}}
+  .bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:linear-gradient(#000,transparent 72%);mask-image:linear-gradient(#000,transparent 72%)}
+
+  #progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:120;background:linear-gradient(90deg,var(--red),var(--gold));box-shadow:0 0 12px rgba(216,35,42,.8)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.35s}
+  header.solid{background:rgba(6,7,11,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+  .badge{width:38px;height:38px;border-radius:11px;flex:none;display:grid;place-items:center;
+    background:linear-gradient(150deg,var(--red),var(--red-deep));border:1.5px solid rgba(240,193,75,.55);
+    box-shadow:0 6px 20px rgba(216,35,42,.4),inset 0 0 12px rgba(255,224,138,.18)}
+  .badge svg{width:20px;height:20px}
+  .brand-txt b{display:block;font-size:15.5px;line-height:1.25}
+  .brand-txt span{display:block;font-size:10.5px;color:var(--dim);letter-spacing:2.6px;font-weight:600}
+  .menu{display:flex;align-items:center;gap:4px}
+  .menu a{padding:9px 14px;border-radius:9px;font-size:14px;color:var(--dim);transition:.22s;font-weight:500}
+  .menu a:hover{color:#fff;background:rgba(255,255,255,.06)}
+  .menu a.on{color:#fff;background:rgba(216,35,42,.18);box-shadow:inset 0 0 0 1px rgba(216,35,42,.4)}
+  .nav-cta{margin-left:8px;padding:9px 18px;border-radius:10px;font-size:14px;font-weight:700;
+    background:linear-gradient(135deg,var(--red),#a5151b);color:#fff;box-shadow:0 6px 20px rgba(216,35,42,.38);transition:.25s}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(216,35,42,.55)}
+  .burger{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff;cursor:pointer}
+  @media(max-width:900px){
+    .menu{position:fixed;inset:70px 0 auto 0;flex-direction:column;align-items:stretch;gap:2px;padding:14px 18px 22px;
+      background:rgba(8,9,14,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
+      transform:translateY(-130%);transition:.4s cubic-bezier(.5,0,.2,1)}
+    .menu.open{transform:translateY(0)}
+    .menu a{padding:13px 14px;font-size:15px}
+    .nav-cta{margin:8px 0 0;text-align:center}
+    .burger{display:grid;place-items:center}
+  }
+
+  section{padding:104px 0;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:2.4px;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--red),var(--gold))}
+  h2.title{font-size:clamp(27px,3.6vw,42px);font-weight:850;letter-spacing:-.5px;line-height:1.28;margin-bottom:14px}
+  h2.title em{font-style:normal;background:linear-gradient(100deg,var(--red-l),var(--gold-l));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--dim);font-size:15.5px;max-width:640px}
+  .head{margin-bottom:52px}
+  .center{text-align:center}
+  .center .sub{margin:0 auto}
+  .center .eyebrow::before{display:none}
+
+  .card{background:linear-gradient(165deg,var(--panel),var(--ink2));border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px 26px;position:relative;overflow:hidden;transition:.35s}
+  .card::after{content:"";position:absolute;inset:0;border-radius:var(--radius);pointer-events:none;
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(216,35,42,.14),transparent 62%);opacity:0;transition:.35s}
+  .card:hover{transform:translateY(-6px);border-color:rgba(216,35,42,.45);box-shadow:0 22px 50px rgba(0,0,0,.55)}
+  .card:hover::after{opacity:1}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  .hero{padding:150px 0 84px}
+  .hero-grid{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center}
+  .tagline{display:inline-flex;align-items:center;gap:10px;padding:7px 15px 7px 8px;border-radius:100px;
+    border:1px solid rgba(240,193,75,.32);background:rgba(240,193,75,.07);
+    font-size:12.5px;color:var(--gold-l);font-weight:600;letter-spacing:.6px;margin-bottom:26px}
+  .tagline i,.poster-chip i,.f-bottom .rp i{width:22px;height:22px;border-radius:50%;background:linear-gradient(140deg,var(--red),var(--red-deep));display:grid;place-items:center;font-style:normal}
+  .tagline i svg{width:12px;height:12px}
+  .hero h1{font-size:clamp(34px,5.4vw,62px);font-weight:900;letter-spacing:-1.4px;line-height:1.14;margin-bottom:22px}
+  .hero h1 .grad{background:linear-gradient(100deg,#fff 10%,var(--gold-l) 48%,var(--red-l) 96%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{color:#b6bece;font-size:16.5px;max-width:530px;margin-bottom:34px}
+  .hero p.lead b{color:#fff;font-weight:700}
+  .btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{padding:14px 26px;border-radius:12px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:9px;transition:.28s;cursor:pointer;border:none;font-family:inherit}
+  .btn-red{background:linear-gradient(135deg,var(--red),#9d1218);color:#fff;box-shadow:0 10px 30px rgba(216,35,42,.4)}
+  .btn-red:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(216,35,42,.6)}
+  .btn-ghost{background:rgba(255,255,255,.05);color:#e9ecf3;box-shadow:inset 0 0 0 1px var(--line)}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+  .btn svg{width:17px;height:17px}
+
+  .poster-wrap{position:relative}
+  .poster{position:relative;border-radius:22px;overflow:hidden;border:1.5px solid rgba(240,193,75,.4);background:#0a0b10;
+    box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 8px rgba(216,35,42,.07),0 0 70px rgba(216,35,42,.32);animation:float 7s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .poster img{width:100%;height:auto}
+  .poster::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg,rgba(216,35,42,.10),transparent 30%,transparent 68%,rgba(6,7,11,.55))}
+  .poster-chip{position:absolute;top:14px;left:14px;z-index:4;display:flex;align-items:center;gap:7px;
+    padding:6px 13px 6px 7px;border-radius:100px;font-size:11.5px;font-weight:700;letter-spacing:1px;
+    background:rgba(10,11,16,.78);border:1px solid rgba(240,193,75,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .poster-chip i{width:18px;height:18px}
+  .poster-chip i svg{width:10px;height:10px}
+  .poster-cap{margin-top:20px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--dim);letter-spacing:.5px}
+  .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--red-l);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(216,35,42,.7)}70%{box-shadow:0 0 0 12px rgba(216,35,42,0)}100%{box-shadow:0 0 0 0 rgba(216,35,42,0)}}
+  .poster .fallback{display:none;padding:70px 24px;text-align:center;color:var(--dim);font-size:14px}
+  .poster.failed img{display:none}
+  .poster.failed .fallback{display:block}
+  @media(max-width:960px){
+    .hero{padding:120px 0 60px}
+    .hero-grid{grid-template-columns:1fr;gap:44px;text-align:center}
+    .poster-wrap{order:-1;max-width:560px;margin:0 auto;width:100%}
+    .hero p.lead{margin-left:auto;margin-right:auto}
+    .tagline{margin-left:auto;margin-right:auto}
+    .btns{justify-content:center}
+  }
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .stat{background:linear-gradient(170deg,var(--panel),#0a0c12);padding:28px 20px;text-align:center;position:relative;transition:.3s}
+  .stat:hover{background:linear-gradient(170deg,#171b28,#0c0e15)}
+  .stat b{display:block;font-size:clamp(30px,4vw,44px);font-weight:900;letter-spacing:-1px;line-height:1.1;
+    background:linear-gradient(120deg,#fff,var(--gold-l));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat span{display:block;font-size:13px;color:var(--dim);margin-top:7px;letter-spacing:1.2px}
+  .stat i{position:absolute;top:0;left:50%;transform:translateX(-50%);width:36px;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  .about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:46px;align-items:start}
+  .about-txt p{color:#b6bece;font-size:15.5px;margin-bottom:18px}
+  .about-txt p b{color:#fff;font-weight:700}
+  .quote{margin-top:28px;padding:22px 24px;border-radius:14px;
+    background:linear-gradient(120deg,rgba(216,35,42,.14),rgba(216,35,42,.02));border-left:3px solid var(--red)}
+  .quote p{color:#e6e9f0;font-size:15.5px;font-style:italic;margin:0}
+  .mini-list{display:flex;flex-direction:column;gap:14px}
+  .mini{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:15px;background:linear-gradient(150deg,var(--panel),#0a0c12);border:1px solid var(--line);transition:.3s}
+  .mini:hover{border-color:rgba(240,193,75,.4);transform:translateX(5px)}
+  .mini .ic{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(216,35,42,.22),rgba(216,35,42,.05));border:1px solid rgba(216,35,42,.35)}
+  .mini .ic svg{width:21px;height:21px;stroke:var(--gold-l)}
+  .mini h4{font-size:15.5px;font-weight:750;margin-bottom:4px}
+  .mini p{font-size:13.5px;color:var(--dim);margin:0;line-height:1.65}
+  @media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:30px}}
+
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .feat .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;background:linear-gradient(145deg,rgba(216,35,42,.26),rgba(240,193,75,.1));border:1px solid rgba(216,35,42,.4);transition:.35s}
+  .card:hover .ic{transform:rotate(-6deg) scale(1.06);box-shadow:0 10px 26px rgba(216,35,42,.35)}
+  .feat .ic svg{width:25px;height:25px;stroke:var(--gold-l)}
+  .feat h3{font-size:17px;font-weight:750;margin-bottom:10px}
+  .feat p{font-size:13.8px;color:var(--dim);line-height:1.75}
+  .plan .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;background:linear-gradient(145deg,rgba(216,35,42,.26),rgba(240,193,75,.1));border:1px solid rgba(216,35,42,.4)}
+  .plan .ic svg{width:25px;height:25px;stroke:var(--gold-l)}
+  .plan h3{font-size:17.5px;font-weight:750;margin-bottom:10px}
+  .plan p{font-size:14px;color:var(--dim)}
+  @media(max-width:1000px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.grid-4,.grid-2{grid-template-columns:1fr}}
+
+  .signup{border-radius:22px;overflow:hidden;position:relative;
+    background:linear-gradient(120deg,#8a0f14,#c11921 42%,#5f0a0d);border:1px solid rgba(240,193,75,.35);box-shadow:0 30px 70px rgba(0,0,0,.6)}
+  .signup::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cg fill='none' stroke='%23ffe08a' stroke-opacity='0.18'%3E%3Cpath d='M0 45h30V15h30v30h30'/%3E%3C/g%3E%3Cg fill='%23ffe08a' fill-opacity='0.28'%3E%3Ccircle cx='30' cy='15' r='2'/%3E%3Ccircle cx='60' cy='45' r='2'/%3E%3C/g%3E%3C/svg%3E")}
+  .signup-inner{position:relative;display:grid;grid-template-columns:1fr 340px;gap:44px;align-items:center;padding:52px 46px}
+  .signup h2{font-size:clamp(24px,3.2vw,36px);font-weight:850;color:#fff;letter-spacing:-.4px;margin-bottom:14px;line-height:1.3}
+  .signup p{color:rgba(255,255,255,.85);font-size:15px;max-width:520px;margin-bottom:24px}
+  .signup .eyebrow{color:#ffe08a}
+  .btn-white{background:#fff;color:#a81118}
+  .btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.4)}
+  .btn-line{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+  .btn-line:hover{background:rgba(255,255,255,.2);transform:translateY(-3px)}
+  .qr-card{background:rgba(8,9,14,.55);border:1px solid rgba(240,193,75,.4);border-radius:16px;padding:14px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .qr-card img{border-radius:10px;width:100%}
+  .qr-card span{display:block;text-align:center;font-size:12.5px;color:rgba(255,255,255,.85);margin-top:11px;letter-spacing:.6px}
+  @media(max-width:900px){.signup-inner{grid-template-columns:1fr;padding:40px 26px;gap:30px}.qr-card{max-width:300px;margin:0 auto}}
+
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ph{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:linear-gradient(160deg,var(--panel),#0a0c12);transition:.35s}
+  .ph img{width:100%;height:100%;object-fit:cover;transition:.6s cubic-bezier(.2,.7,.3,1)}
+  .ph:hover{transform:translateY(-6px);border-color:rgba(216,35,42,.5);box-shadow:0 22px 50px rgba(0,0,0,.6)}
+  .ph:hover img{transform:scale(1.07)}
+  .ph .cap{position:absolute;inset:auto 0 0 0;padding:34px 16px 15px;font-size:13px;color:#fff;font-weight:600;letter-spacing:.4px;
+    background:linear-gradient(transparent,rgba(6,7,11,.92))}
+  .ph .cap small{display:block;font-weight:400;color:var(--dim);font-size:11.5px;margin-top:3px}
+  .ph.empty{display:grid;place-items:center;border-style:dashed;border-color:rgba(255,255,255,.16);background:linear-gradient(160deg,#0d1018,#080a10)}
+  .ph.empty .inner{text-align:center;color:var(--dim);padding:20px}
+  .ph.empty .inner svg{width:30px;height:30px;stroke:rgba(240,193,75,.5);margin:0 auto 12px}
+  .ph.empty .inner b{display:block;font-size:13.5px;color:#c8cfdd;font-weight:600;margin-bottom:4px}
+  .ph.empty .inner span{font-size:11.5px}
+  @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.gallery{grid-template-columns:1fr}}
+
+  .faq{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  .qa{border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,var(--panel),#0a0c12);overflow:hidden;transition:.3s}
+  .qa.open{border-color:rgba(216,35,42,.45);background:linear-gradient(160deg,#151827,#0b0d14)}
+  .qa button{width:100%;background:none;border:none;color:var(--txt);font-family:inherit;font-size:15.5px;font-weight:650;text-align:left;
+    padding:21px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer}
+  .qa button .pm{width:26px;height:26px;flex:none;border-radius:8px;display:grid;place-items:center;background:rgba(216,35,42,.18);border:1px solid rgba(216,35,42,.35);transition:.3s;color:var(--gold-l);font-size:16px;line-height:1}
+  .qa.open button .pm{transform:rotate(45deg);background:var(--red);color:#fff}
+  .qa .ans{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
+  .qa .ans p{padding:0 22px 22px;color:var(--dim);font-size:14.3px;line-height:1.8;margin:0}
+
+  footer{border-top:1px solid var(--line);padding:62px 0 34px;background:linear-gradient(180deg,transparent,rgba(216,35,42,.06))}
+  .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  .f-grid h5{font-size:13px;letter-spacing:2px;color:var(--gold);margin-bottom:16px;font-weight:700}
+  .f-grid a{color:var(--dim);font-size:14px;margin-bottom:10px;transition:.25s;display:block}
+  .f-grid a:hover{color:#fff;transform:translateX(3px)}
+  .f-about p{color:var(--dim);font-size:13.8px;max-width:340px;margin-top:16px;line-height:1.8}
+  .f-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.8px;color:#6f7788}
+  .f-bottom .rp{display:flex;align-items:center;gap:8px}
+  .f-bottom .rp i{width:16px;height:16px}
+  .f-bottom .rp i svg{width:9px;height:9px}
+  @media(max-width:760px){.f-grid{grid-template-columns:1fr;gap:28px}}
+
+  /* ===== 支部班子 ===== */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:900px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.grid-3{grid-template-columns:1fr}}
+  .person{padding:0;overflow:hidden}
+  .person .avatar{position:relative;aspect-ratio:1/1;overflow:hidden;background:linear-gradient(160deg,#161a26,#0a0c12)}
+  .person .avatar img{width:100%;height:100%;object-fit:cover;object-position:center;transition:.7s cubic-bezier(.2,.7,.3,1)}
+  .person .avatar img.pos-30{object-position:center 30%}
+  .person .avatar img.pos-r{object-position:64% 50%}
+  .person:hover .avatar img{transform:scale(1.06)}
+  .person .avatar::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(6,7,11,.3) 0%,transparent 32%,transparent 55%,rgba(6,7,11,.88) 100%)}
+  .role-tag{position:absolute;top:13px;left:13px;z-index:3;display:inline-flex;align-items:center;gap:7px;
+    padding:6px 14px 6px 7px;border-radius:100px;font-size:12px;font-weight:750;letter-spacing:.8px;color:#fff;
+    background:linear-gradient(135deg,rgba(216,35,42,.95),rgba(120,12,17,.95));
+    border:1px solid rgba(240,193,75,.5);box-shadow:0 6px 18px rgba(0,0,0,.5)}
+  .role-tag i{width:17px;height:17px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-style:normal}
+  .role-tag i svg{width:10px;height:10px}
+  .p-body{padding:22px 22px 24px;position:relative;z-index:2}
+  .p-body h3{font-size:20px;font-weight:850;letter-spacing:.5px;margin-bottom:7px;display:flex;align-items:center;gap:10px}
+  .p-body h3::after{content:"";height:2px;flex:1;background:linear-gradient(90deg,rgba(216,35,42,.75),transparent)}
+  .p-role{font-size:12.5px;color:var(--gold);font-weight:700;letter-spacing:1.6px;margin-bottom:12px}
+  .p-desc{font-size:13.6px;color:var(--dim);line-height:1.78;margin-bottom:14px}
+  .p-todo{font-size:12px;color:#6b7385;padding:9px 12px;border-radius:9px;border:1px dashed rgba(255,255,255,.14);background:rgba(255,255,255,.02);margin:0}
+
+  #top{position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:13px;z-index:90;cursor:pointer;
+    background:linear-gradient(140deg,var(--red),#8a0f14);border:1px solid rgba(240,193,75,.35);
+    display:grid;place-items:center;opacity:0;pointer-events:none;transition:.35s;box-shadow:0 10px 26px rgba(216,35,42,.45)}
+  #top.show{opacity:1;pointer-events:auto}
+  #top:hover{transform:translateY(-4px)}
+  #top svg{width:19px;height:19px;stroke:#fff}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<div class="bg">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+  <div class="bg-grid"></div><div class="bg-pattern"></div>
+</div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <div class="brand">
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="#ffe08a"><path d="M12 1.6l3.1 6.4 7 1-5.1 4.9 1.2 7-6.2-3.3-6.2 3.3 1.2-7L1.9 9l7-1z"/></svg>
+      </span>
+      <span class="brand-txt">
+        <b>63026619 班团支部</b>
+        <span>东南大学</span>
+      </span>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#about">支部概况</a>
+      <a href="#members">支部班子</a>
+      <a href="#feature">支部特色</a>
+      <a href="#gallery">活动剪影</a>
+      <a href="#plan">建设规划</a>
+      <a href="#faq">常见问题</a>
+      <a href="#signup" class="nav-cta">团课报名</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="菜单">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <div class="tagline">
+        <i><svg viewBox="0 0 24 24" fill="#ffe08a"><path d="M12 1.6l3.1 6.4 7 1-5.1 4.9 1.2 7-6.2-3.3-6.2 3.3 1.2-7L1.9 9l7-1z"/></svg></i>
+        共青团 · 东南大学 63026619 班团支部
+      </div>
+      <h1><span class="grad">芯火相传</span><br>青春向党</h1>
+      <p class="lead">以<b>集成电路</b>为专业底色，以<b>红色基因</b>为精神坐标。<br>我们是从一颗芯片的方寸之间，走向科技报国的青年集体。</p>
+      <div class="btns">
+        <a href="#about" class="btn btn-red">走进支部
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#signup" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+          团课报名
+        </a>
+      </div>
+    </div>
+
+    <div class="poster-wrap reveal in">
+      <div class="poster" id="poster">
+        <div class="poster-chip">
+          <i><svg viewBox="0 0 24 24" fill="#ffe08a"><path d="M12 1.6l3.1 6.4 7 1-5.1 4.9 1.2 7-6.2-3.3-6.2 3.3 1.2-7L1.9 9l7-1z"/></svg></i>
+          630266 团支部
+        </div>
+        <img src="assets/hero-tuanke.jpg" alt="东南大学 63026619 班团支部 团课报名海报" onerror="document.getElementById('poster').classList.add('failed')">
+        <div class="fallback">海报图片加载失败，请刷新页面重试</div>
+      </div>
+      <div class="poster-cap"><span class="pulse-dot"></span>团课报名进行中 · 长按识别二维码进入报名</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <!-- TODO 待补充：把下面四个数字改成支部真实数据（data-target） -->
+    <div class="stats reveal">
+      <div class="stat"><i></i><b class="count" data-target="45">0</b><span>团员人数</span></div>
+      <div class="stat"><i></i><b class="count" data-target="4">0</b><span>团小组</span></div>
+      <div class="stat"><i></i><b class="count" data-target="32" data-suffix="+">0</b><span>主题活动</span></div>
+      <div class="stat"><i></i><b class="count" data-target="600" data-suffix="+">0</b><span>志愿服务时长</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">About Us</div>
+      <h2 class="title">方寸之间，<em>是我们的大格局</em></h2>
+      <p class="sub">东南大学 63026619 班团支部，依托集成电路相关专业方向组建，把团的组织建设与专业成长拧成一股绳。</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-txt reveal">
+        <p>我们是东南大学 <b>63026619 班团支部</b>（团支部编号 630266）。支部以团支部标准化、规范化建设为根基，坚持“三会两制一课”，把每一次理论学习都落到实处。</p>
+        <p>同时，我们也把专业特色写进团的工作：从晶圆到封装，从晶体管到中国芯，支部成员在<b>芯片的世界里寻找报国的答案</b>。我们把团课开进实验室、开进讲座、开进产业一线。</p>
+        <p>一支支部，一群青年。我们希望用这个小小的页面，记录 63026619 班的成长轨迹，也记录每一位团员眼里的那束光。</p>
+        <div class="quote"><p>“每一次技术攻坚，都是一次青春宣誓；每一块中国芯，都是一面不会褪色的旗。”</p></div>
+      </div>
+      <div class="mini-list reveal">
+        <div class="mini">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg></div>
+          <div><h4>思想引领 · 红色铸魂</h4><p>坚持三会两制一课，开展主题团日、团课学习，让理论学习真正走心入脑。</p></div>
+        </div>
+        <div class="mini">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></div>
+          <div><h4>专业融合 · 芯火相传</h4><p>把集成电路专业方向与团支部建设结合，形成“团课 + 芯路”特色品牌。</p></div>
+        </div>
+        <div class="mini">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 20v-2a4 4 0 00-3-3.87M16 3.13A4 4 0 0119 7a4 4 0 01-3 3.87"/></svg></div>
+          <div><h4>青年担当 · 服务同学</h4><p>志愿服务、学风建设、朋辈互助，支部始终是同学们身边最可靠的一群人。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="members" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">Committee</div>
+      <h2 class="title">支部班子，<em>一群可爱的人</em></h2>
+      <p class="sub">他们扛起了支部的日常，也扛起了 63026619 班的团味与青春。</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card person reveal">
+        <div class="avatar">
+          <img class="pos-r" src="assets/member-bengbeng.jpg" alt="团支书 绷绷">
+          <span class="role-tag"><i><svg viewBox="0 0 24 24" fill="#ffe08a"><path d="M12 1.6l3.1 6.4 7 1-5.1 4.9 1.2 7-6.2-3.3-6.2 3.3 1.2-7L1.9 9l7-1z"/></svg></i>团支书</span>
+        </div>
+        <div class="p-body">
+          <h3>绷绷</h3>
+          <div class="p-role">团支部书记</div>
+          <p class="p-desc">统筹支部全面工作，牵头组织建设、思想引领与主题团日活动，是支部的主心骨。</p>
+          <p class="p-todo">个人介绍待补充</p>
+        </div>
+      </div>
+      <div class="card person reveal">
+        <div class="avatar">
+          <img class="pos-30" src="assets/member-binbin.jpg" alt="学习委员 宾宾">
+          <span class="role-tag"><i><svg viewBox="0 0 24 24" fill="#ffe08a"><path d="M12 1.6l3.1 6.4 7 1-5.1 4.9 1.2 7-6.2-3.3-6.2 3.3 1.2-7L1.9 9l7-1z"/></svg></i>学习委员</span>
+        </div>
+        <div class="p-body">
+          <h3>宾宾</h3>
+          <div class="p-role">学习委员</div>
+          <p class="p-desc">负责学风建设与学习资源分享，组织朋辈互助与课程答疑，把班里的学习氛围稳稳托住。</p>
+          <p class="p-todo">个人介绍待补充</p>
+        </div>
+      </div>
+      <div class="card person reveal">
+        <div class="avatar">
+          <img src="assets/member-zz.jpg" alt="班长 ZZ">
+          <span class="role-tag"><i><svg viewBox="0 0 24 24" fill="#ffe08a"><path d="M12 1.6l3.1 6.4 7 1-5.1 4.9 1.2 7-6.2-3.3-6.2 3.3 1.2-7L1.9 9l7-1z"/></svg></i>班长</span>
+        </div>
+        <div class="p-body">
+          <h3>ZZ</h3>
+          <div class="p-role">班长</div>
+          <p class="p-desc">统筹班级日常事务，协调班委与同学之间的沟通，是班级运转的稳定器。</p>
+          <p class="p-todo">个人介绍待补充</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="feature" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">Features</div>
+      <h2 class="title">一条主线，<em>四个支点</em></h2>
+      <p class="sub">围绕“思想引领 + 专业赋能”，我们搭建了四个长期坚持的工作支点。</p>
+    </div>
+    <div class="grid-4">
+      <div class="card feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 012-2h12a2 2 0 012 2v14.5"/><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M9 7h6M9 11h4"/></svg></div>
+        <h3>主题团课</h3><p>常态化开展团课与主题团日，从党的创新理论到时政热点，让学习有深度也有温度。</p>
+      </div>
+      <div class="card feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7.5" y="7.5" width="9" height="9" rx="1.6"/><path d="M10 3v3.5M14 3v3.5M10 17.5V22M14 17.5V22M3 10h3.5M3 14h3.5M17.5 10H22M17.5 14H22"/></svg></div>
+        <h3>芯路讲堂</h3><p>把集成电路专业知识带进支部活动，讲行业、讲人物、讲“卡脖子”背后的青年责任。</p>
+      </div>
+      <div class="card feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5.6L20 9l-4 4.2.9 6-4.9-2.7L7.1 19.2 8 13.2 4 9l5.6-1.4z"/></svg></div>
+        <h3>科创实践</h3><p>以赛促学、以研促创，鼓励团员走进实验室、参与学科竞赛与科研训练项目。</p>
+      </div>
+      <div class="card feat reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.4 5.4 0 00-7.6 0L12 6.8l-1.2-1.2a5.4 5.4 0 00-7.6 7.6l8.8 8.6 8.8-8.6a5.4 5.4 0 000-7.6z"/></svg></div>
+        <h3>志愿服务</h3><p>把青春写在服务里：迎新帮扶、社区志愿、学业互助，让团徽在需要的地方亮起来。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="signup" style="padding-top:20px">
+  <div class="wrap">
+    <div class="signup reveal">
+      <div class="signup-inner">
+        <div>
+          <div class="eyebrow">Sign Up</div>
+          <h2>团课报名通道已开启</h2>
+          <p>扫描右侧二维码即可进入报名。本期团课围绕“科技创新，青春筑梦”展开，欢迎 63026619 班全体团员与同学参与。</p>
+          <div class="btns">
+            <a href="#gallery" class="btn btn-white">查看往期活动</a>
+            <a href="#faq" class="btn btn-line">报名常见问题</a>
+          </div>
+        </div>
+        <div class="qr-card">
+          <img src="assets/hero-tuanke.jpg" alt="团课报名二维码" onerror="this.closest('.qr-card').style.display='none'">
+          <span>长按识别二维码 · 进入报名</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Gallery</div>
+      <h2 class="title">活动剪影，<em>青春有迹可循</em></h2>
+      <p class="sub">照片会持续更新，记录支部的每一次相聚、每一堂课、每一次出发。</p>
+    </div>
+    <div class="gallery reveal">
+      <div class="ph">
+        <img src="assets/gallery-tuanke.jpg" alt="主题团课现场">
+        <div class="cap">主题团课现场<small>从零到一，走进中国芯的故事</small></div>
+      </div>
+      <div class="ph">
+        <img src="assets/gallery-chongwu.jpg" alt="支部活动现场">
+        <div class="cap">支部活动现场<small>轻松活泼，团味十足</small></div>
+      </div>
+      <div class="ph">
+        <img src="assets/gallery-zhongshen.jpg" alt="团员风采展示">
+        <div class="cap">团宠日常<small>众神归位 · 支部的快乐源泉</small></div>
+      </div>
+      <div class="ph empty"><div class="inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.8" cy="9.5" r="1.6"/><path d="M3 17l5-4.5 4.5 4 3-2.5L21 18"/></svg>
+        <b>照片待补充</b><span>组织生活会 · 团日活动</span></div></div>
+      <div class="ph empty"><div class="inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.8" cy="9.5" r="1.6"/><path d="M3 17l5-4.5 4.5 4 3-2.5L21 18"/></svg>
+        <b>照片待补充</b><span>科创实践 · 学科竞赛</span></div></div>
+      <div class="ph empty"><div class="inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.8" cy="9.5" r="1.6"/><path d="M3 17l5-4.5 4.5 4 3-2.5L21 18"/></svg>
+        <b>照片待补充</b><span>志愿服务 · 社会实践</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">Roadmap</div>
+      <h2 class="title">支部建设，<em>下一步这样走</em></h2>
+      <p class="sub">把支部建成一个有思想、有专业、有温度、有回声的青年集体。</p>
+    </div>
+    <div class="grid-2">
+      <div class="card plan reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 012-2h12a2 2 0 012 2v14.5"/><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></svg></div>
+        <h3>夯实思想引领阵地</h3><p>规范化开展“三会两制一课”，建立团课学习台账，推动理论学习形式多样化、参与全覆盖。</p>
+      </div>
+      <div class="card plan reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7.5" y="7.5" width="9" height="9" rx="1.6"/><path d="M10 3v3.5M14 3v3.5M10 17.5V22M14 17.5V22M3 10h3.5M3 14h3.5M17.5 10H22M17.5 14H22"/></svg></div>
+        <h3>打造“芯”特色品牌</h3><p>持续办好“芯路讲堂”，邀请师长、学长与行业人士分享，把专业认同与家国情怀结合起来。</p>
+      </div>
+      <div class="card plan reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 20v-2a4 4 0 00-3-3.87"/></svg></div>
+        <h3>服务同学成长成才</h3><p>围绕学风建设、课程互助、生涯规划开展朋辈互助，让支部成为同学遇到困难时第一个想到的地方。</p>
+      </div>
+      <div class="card plan reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a7 7 0 0114 0c0 5.4-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg></div>
+        <h3>记录与传播支部故事</h3><p>持续更新本页面的活动照片与成果信息，沉淀支部记忆，让更多人看见 63026619 班的青春面貌。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="title">关于支部，<em>你可能想知道</em></h2>
+    </div>
+    <div class="faq reveal">
+      <div class="qa">
+        <button><span>63026619 班团支部是一个怎样的集体？</span><span class="pm">+</span></button>
+        <div class="ans"><p>东南大学 63026619 班团支部（团支部编号 630266）是由本班团员组成的基层团组织，依托班级建立，承担思想引领、组织建设、服务同学等基本职能，并结合班级专业方向形成自己的活动特色。</p></div>
+      </div>
+      <div class="qa">
+        <button><span>不是团员，可以参加支部活动吗？</span><span class="pm">+</span></button>
+        <div class="ans"><p>可以。支部组织的团课、讲座、志愿服务和文体活动大多面向班级全体同学开放，也欢迎其他班级同学参与交流。涉及团内事务表决的会议按团章规定由团员参加。</p></div>
+      </div>
+      <div class="qa">
+        <button><span>团课怎么报名？</span><span class="pm">+</span></button>
+        <div class="ans"><p>在页面顶部的团课海报或“团课报名”板块中，长按识别二维码即可进入报名入口。具体时间、地点和主题以支部通知为准。</p></div>
+      </div>
+      <div class="qa">
+        <button><span>如何向支部投稿照片或信息？</span><span class="pm">+</span></button>
+        <div class="ans"><p>本页面的活动照片与支部信息仍在持续补充中。你可以把照片和文字资料交给支部宣传委员，统一整理后更新到本页面。</p></div>
+      </div>
+      <div class="qa">
+        <button><span>这个页面会长期维护吗？</span><span class="pm">+</span></button>
+        <div class="ans"><p>本页面主要用于阶段性地展示团支部与班级信息，内容会随支部活动持续更新，具体更新节奏以支部安排为准。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-about">
+        <div class="brand">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="#ffe08a"><path d="M12 1.6l3.1 6.4 7 1-5.1 4.9 1.2 7-6.2-3.3-6.2 3.3 1.2-7L1.9 9l7-1z"/></svg></span>
+          <span class="brand-txt"><b>63026619 班团支部</b><span>东南大学</span></span>
+        </div>
+        <p>芯火相传，青春向党。<br>记录东南大学 63026619 班团支部的每一次学习、每一次行动、每一步成长。</p>
+      </div>
+      <div>
+        <h5>快速导航</h5>
+        <a href="#about">支部概况</a>
+        <a href="#feature">支部特色</a>
+        <a href="#gallery">活动剪影</a>
+        <a href="#plan">建设规划</a>
+      </div>
+      <div>
+        <h5>相关内容</h5>
+        <a href="#signup">团课报名</a>
+        <a href="#faq">常见问题</a>
+        <a href="#top">返回顶部</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <div class="rp">
+        <i><svg viewBox="0 0 24 24" fill="#ffe08a"><path d="M12 1.6l3.1 6.4 7 1-5.1 4.9 1.2 7-6.2-3.3-6.2 3.3 1.2-7L1.9 9l7-1z"/></svg></i>
+        共青团 · 东南大学 63026619 班团支部
+      </div>
+      <div>页面内容持续更新中 · 最终解释以支部通知为准</div>
+    </div>
+  </div>
+</footer>
+
+<div id="top" title="返回顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var hdr = document.getElementById('hdr');
+  var menu = document.getElementById('menu');
+  var burger = document.getElementById('burger');
+  var progress = document.getElementById('progress');
+  var toTop = document.getElementById('top');
+
+  burger.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.addEventListener('click', function(e){ if(e.target.tagName === 'A') menu.classList.remove('open'); });
+
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    hdr.classList.toggle('solid', y > 24);
+    toTop.classList.toggle('show', y > 700);
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    var cur = '';
+    document.querySelectorAll('section[id]').forEach(function(s){
+      if (s.getBoundingClientRect().top <= 140) cur = s.id;
+    });
+    menu.querySelectorAll('a[href^="#"]:not(.nav-cta)').forEach(function(a){
+      a.classList.toggle('on', a.getAttribute('href') === '#' + cur);
+    });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){ ticking = true; requestAnimationFrame(function(){ onScroll(); ticking = false; }); }
+  }, {passive:true});
+  onScroll();
+
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en, i){
+      if(en.isIntersecting){
+        setTimeout(function(){ en.target.classList.add('in'); }, i * 70);
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  function runCount(el){
+    var target = parseFloat(el.getAttribute('data-target')) || 0;
+    var suffix = el.getAttribute('data-suffix') || '';
+    var dur = 1500, start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ runCount(en.target); cio.unobserve(en.target); }
+    });
+  }, {threshold: 0.5});
+  document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
+
+  document.querySelectorAll('.qa').forEach(function(qa){
+    var btn = qa.querySelector('button');
+    var ans = qa.querySelector('.ans');
+    btn.addEventListener('click', function(){
+      var isOpen = qa.classList.contains('open');
+      document.querySelectorAll('.qa').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.ans').style.maxHeight = '0px';
+      });
+      if(!isOpen){ qa.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+    });
+  });
+
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('mousemove', function(e){
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+})();
+</script>
+</body>
+</html>
